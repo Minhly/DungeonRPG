@@ -1,0 +1,13 @@
+C:\Users\minh0040\source\repos\DungeonRPG\DungeonRPG\obj\Debug\netcoreapp3.1\DungeonRPG.csprojAssemblyReference.cache
+C:\Users\minh0040\source\repos\DungeonRPG\DungeonRPG\obj\Debug\netcoreapp3.1\DungeonRPG.AssemblyInfoInputs.cache
+C:\Users\minh0040\source\repos\DungeonRPG\DungeonRPG\obj\Debug\netcoreapp3.1\DungeonRPG.AssemblyInfo.cs
+C:\Users\minh0040\source\repos\DungeonRPG\DungeonRPG\obj\Debug\netcoreapp3.1\DungeonRPG.csproj.CoreCompileInputs.cache
+C:\Users\minh0040\source\repos\DungeonRPG\DungeonRPG\bin\Debug\netcoreapp3.1\DungeonRPG.exe
+C:\Users\minh0040\source\repos\DungeonRPG\DungeonRPG\bin\Debug\netcoreapp3.1\DungeonRPG.deps.json
+C:\Users\minh0040\source\repos\DungeonRPG\DungeonRPG\bin\Debug\netcoreapp3.1\DungeonRPG.runtimeconfig.json
+C:\Users\minh0040\source\repos\DungeonRPG\DungeonRPG\bin\Debug\netcoreapp3.1\DungeonRPG.runtimeconfig.dev.json
+C:\Users\minh0040\source\repos\DungeonRPG\DungeonRPG\bin\Debug\netcoreapp3.1\DungeonRPG.dll
+C:\Users\minh0040\source\repos\DungeonRPG\DungeonRPG\bin\Debug\netcoreapp3.1\DungeonRPG.pdb
+C:\Users\minh0040\source\repos\DungeonRPG\DungeonRPG\obj\Debug\netcoreapp3.1\DungeonRPG.dll
+C:\Users\minh0040\source\repos\DungeonRPG\DungeonRPG\obj\Debug\netcoreapp3.1\DungeonRPG.pdb
+C:\Users\minh0040\source\repos\DungeonRPG\DungeonRPG\obj\Debug\netcoreapp3.1\DungeonRPG.genruntimeconfig.cache

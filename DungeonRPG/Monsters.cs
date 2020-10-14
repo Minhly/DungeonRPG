@@ -6,9 +6,8 @@ namespace DungeonRPG
 {
     public class Monsters
     {
-        public int CurrentHitpoints { get; set; }
-        public int FullHitpoints { get; set; }
-        public int MaxHit { get; set; }
+        public int FullHitpoints { get; set; } = 0;
+        public int MaxHit { get; set; } = 0;
         public string Name { get; set; }
 
         Random rnd = new Random();

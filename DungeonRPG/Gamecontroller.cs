@@ -8,15 +8,12 @@ namespace DungeonRPG
     {
         
         Player player = new Player("Minh", 200, 15);
-
-        Monsters Lichking = new Monsters("Lich King", 100, 10);
-        Monsters Sylvanas = new Monsters("Sylvanas", 100, 10);
-        Monsters Arthas = new Monsters("Arthas", 100, 10);
-        Monsters Alexstrasza = new Monsters("Alexstrasza", 100, 10);
-        Monsters Malygos = new Monsters("Malygos", 100, 10);
         Locationprint Location2 = new Locationprint();
+        MonsterList Monsterlist = new MonsterList();
         Random rnd = new Random();
 
+        bool gameCon = true;
+        int c = 0;
 
         public void StartGame()
         {
@@ -25,12 +22,35 @@ namespace DungeonRPG
             player.Name = playerName;
             Console.Clear();
             Console.WriteLine("Health: {0} Strenght: {1}", player.FullHitpoints, player.MaxHit);
-            Console.WriteLine("Hello {0} you are now starting your journey go Left(l) or Right(r)?", player.Name);
-            Console.Clear();
+            Console.WriteLine("Hello {0} you are now starting your journey to conquer all the dungeons!", player.Name);
+            Console.WriteLine("You enter the first dungeon Darnassus");
+            while (gameCon == true) { 
+                MovePlayer();
+            }
+
+        }
+
+        public void MovePlayer()
+        {
+            Console.WriteLine("Enter (w) to progress further");
             char move = Convert.ToChar(Console.ReadLine());
-            var yolo = Location2.GetLocations()[0];
-            Console.WriteLine("You are now in {0} ",yolo.DungeonName);
-            Console.ReadLine();
+            var loc = Location2.GetLocations()[c];
+            var monst = Monsterlist.GetMonsters()[c];
+            Console.WriteLine("You have reached {0} a monstrous shadow stands before you", loc.DungeonName);
+            Console.WriteLine("Press (q) to engage in battle or (e) to retreat!");
+            move = Convert.ToChar(Console.ReadLine());
+            if (move == 'q')
+            {
+                Console.WriteLine("You have engaged the monster {0}", monst.Name);
+                Battle.StartFight(player, monst);
+            }
+            else if(move == 'e')
+            {
+                monst.MaxHit = monst.MaxHit * 2;
+                monst.FullHitpoints = monst.FullHitpoints * 2;
+                Console.WriteLine("YOU FOOL THERES NO ESCAPE FROM HELL {0} HAS ENRAGED AND DOUBLED ITS STATS", monst.Name);
+            }
+            c++;
         }
     }
 }

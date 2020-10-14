@@ -9,6 +9,7 @@ namespace DungeonRPG
 
             Gamecontroller GameStart = new Gamecontroller();
             GameStart.StartGame();
+            Console.ReadLine();
         }
     }
 }

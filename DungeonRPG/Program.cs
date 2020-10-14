@@ -6,7 +6,6 @@ namespace DungeonRPG
     {
         static void Main(string[] args)
         {
-
             Gamecontroller GameStart = new Gamecontroller();
             GameStart.StartGame();
             Console.ReadLine();

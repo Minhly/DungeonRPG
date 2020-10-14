@@ -52,6 +52,11 @@ namespace DungeonRPG
                 Console.WriteLine("YOU FOOL THERES NO ESCAPE FROM HELL {0} HAS ENRAGED AND DOUBLED ITS STATS", monst.Name);
             }
             c++;
+            if (c == 9)
+            {
+                Console.WriteLine("\nCONGRATULATIONS YOU SURVIVED THE EPIC DUNGEON AND THE REWARD WAS ALL THE FRIENDS YOU MADE ALONG THE WAY!");
+                gameCon = false;
+            }
         }
     }
 }

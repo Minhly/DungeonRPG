@@ -21,19 +21,20 @@ namespace DungeonRPG
             string playerName = Console.ReadLine();
             player.Name = playerName;
             Console.Clear();
-            Console.WriteLine("Health: {0} Strenght: {1}", player.FullHitpoints, player.MaxHit);
+            Console.WriteLine("Health: {0} Strenght: {1}\n", player.FullHitpoints, player.MaxHit);
             Console.WriteLine("Hello {0} you are now starting your journey to conquer all the dungeons!", player.Name);
-            Console.WriteLine("You enter the first dungeon Darnassus");
+            Console.WriteLine("You enter the first dungeon Darnassus\n");
             while (gameCon == true) { 
                 MovePlayer();
             }
-
         }
 
         public void MovePlayer()
         {
             Console.WriteLine("Enter (w) to progress further");
             char move = Convert.ToChar(Console.ReadLine());
+            Console.Clear();
+            Console.WriteLine("Health: {0} Strenght: {1}\n", player.FullHitpoints, player.MaxHit);
             var loc = Location2.GetLocations()[c];
             var monst = Monsterlist.GetMonsters()[c];
             Console.WriteLine("You have reached {0} a monstrous shadow stands before you", loc.DungeonName);

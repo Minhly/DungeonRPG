@@ -12,16 +12,14 @@ namespace DungeonRPG
             {
                 if (GetAttackResult(warrior1, warrior2) == "Game Over")
                 {
-                    Console.WriteLine("Game Over");
                     warrior1.FullHitpoints = warrior1.FullHitpoints + 30;
-                    warrior1.MaxHit = warrior1.MaxHit + 50;
+                    warrior1.MaxHit = warrior1.MaxHit + 10;
                     break;
                 }
                 if (GetAttackResult2(warrior2, warrior1) == "Game Over")
                 {
-                    Console.WriteLine("Game Over");
                     warrior1.FullHitpoints = warrior1.FullHitpoints + 30;
-                    warrior1.MaxHit = warrior1.MaxHit + 50;
+                    warrior1.MaxHit = warrior1.MaxHit + 10;
                     break;
                 }
             }
@@ -49,8 +47,10 @@ namespace DungeonRPG
 
             if (warriorB.FullHitpoints <= 0)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("{0} has Died and {1} is Victorious\n",
                     warriorB.Name, warriorA.Name);
+                Console.ResetColor();
                 return "Game Over";
             }
             else return "Fight Again";
@@ -72,14 +72,18 @@ namespace DungeonRPG
                 warriorA.Name, warriorB.Name, dmg2WarB);
 
             Console.WriteLine("{0} Has {1} Health \n", warriorB.Name, warriorB.FullHitpoints);
-
             if (warriorB.FullHitpoints <= 0)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("{0} has Died and {1} is Victorious\n",
                     warriorB.Name, warriorA.Name);
+                Console.WriteLine("YOU DIED TO {0}?? HOW SHAMEFUL BEGONE NOOB!" ,warriorA.Name);
+                string loser = Console.ReadLine();
+                Console.ResetColor();
                 return "Game Over";
             }
             else return "Fight Again";
+            
         }
     }
 }

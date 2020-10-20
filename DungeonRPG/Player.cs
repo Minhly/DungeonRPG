@@ -4,25 +4,20 @@ using System.Text;
 
 namespace DungeonRPG
 {
-    public class Player
+    public class Player : Character
     {
-        Weapon NoobWeapon = new Weapon("Noob Sword", 10);
 
-        public int FullHitpoints { get; set; } = 0;
-        public int MaxHit { get; set; } = 0;
-        public string Name { get; set; }
-
-        Random rnd = new Random();
-
-        public Player(string name,int fullhitpoints, int maxhit)
+        public Player(string name,int fullhitpoints, int maxhit, int coins, int weapondamage)
         {
             Name = name;
+            Coins = coins;
             FullHitpoints = fullhitpoints;
-            MaxHit = maxhit + NoobWeapon.Damage;
+            WeaponDmg = weapondamage;
+            MaxHit = maxhit;
         }
 
         public int Attack() {
-            return rnd.Next(NoobWeapon.Damage, (int)MaxHit);
+            return rnd.Next(WeaponDmg, (int)MaxHit);
         }
 
     }

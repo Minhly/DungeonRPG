@@ -4,14 +4,8 @@ using System.Text;
 
 namespace DungeonRPG
 {
-    public class Monsters
+    public class Monsters : Character
     {
-        public int FullHitpoints { get; set; } = 0;
-        public int MaxHit { get; set; } = 0;
-        public string Name { get; set; }
-
-        Random rnd = new Random();
-
         public Monsters(string name, int fullhitpoints, int maxhit)
         {
             Name = name;

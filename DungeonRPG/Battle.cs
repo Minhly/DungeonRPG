@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DungeonRPG
 {
-    class Battle : Gamecontroller
+    public class Battle
     {
         public static void StartFight(Player warrior1, Monsters warrior2)
         {
@@ -13,13 +13,13 @@ namespace DungeonRPG
                 if (GetAttackResult(warrior1, warrior2) == "Game Over")
                 {
                     warrior1.FullHitpoints = warrior1.FullHitpoints + 30;
-                    warrior1.MaxHit = warrior1.MaxHit + 10;
+                    warrior1.Coins = warrior1.Coins + 50;
                     break;
                 }
                 if (GetAttackResult2(warrior2, warrior1) == "Game Over")
                 {
                     warrior1.FullHitpoints = warrior1.FullHitpoints + 30;
-                    warrior1.MaxHit = warrior1.MaxHit + 10;
+                    warrior1.Coins = warrior1.Coins + 50;
                     break;
                 }
             }

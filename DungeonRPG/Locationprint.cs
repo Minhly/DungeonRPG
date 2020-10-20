@@ -38,6 +38,5 @@ namespace DungeonRPG
         {
             return LocationRND;
         }
-
     }
 }

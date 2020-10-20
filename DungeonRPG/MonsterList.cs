@@ -15,7 +15,7 @@ namespace DungeonRPG
         Monsters Ysera = new Monsters("Ysera", 200, 10);
         Monsters Azshara = new Monsters("Azshara", 150, 7);
         Monsters Illidan = new Monsters("Illidan", 100, 25);
-        Monsters Cenarius = new Monsters("Cenarius", 400, 2);
+        Monsters Cenarius = new Monsters("Cenarius", 200, 1);
 
         public MonsterList()
         {

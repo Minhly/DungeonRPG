@@ -7,11 +7,11 @@ namespace DungeonRPG
     public class Shop
     {
         public Weapon[] WepList;
-        Weapon BronzeSword = new Weapon("Bronze Sword", 10);
-        Weapon IronSword = new Weapon("Iron Sword", 15);
-        Weapon SteelSword = new Weapon("Steel Sword", 20);
-        Weapon MithrilSword = new Weapon("Mithril Sword", 25);
-        Weapon RuneSword = new Weapon("Rune Sword", 50);
+        Weapon BronzeSword = new Weapon("Bronze Sword", 10, 30);
+        Weapon IronSword = new Weapon("Iron Sword", 20, 30);
+        Weapon SteelSword = new Weapon("Steel Sword", 40, 500);
+        Weapon MithrilSword = new Weapon("Mithril Sword", 60, 900);
+        Weapon RuneSword = new Weapon("Rune Sword", 100, 2000);
 
         public Shop()
         {
@@ -26,48 +26,6 @@ namespace DungeonRPG
             }
         }
 
-        public void ShopEvent()
-        {
-            Console.Clear();
-            bool shopLoop = true;
-            while (shopLoop)
-            {
-                Console.WriteLine("Weapons shop (1)");
-                Console.WriteLine("Regain Hitpoints (2)");
-                Console.WriteLine("Train Strenght (3)");
-                Console.WriteLine("Gamble all coins (4)");
-                Console.WriteLine("Progress further (w)");
-
-                char shopMenu = Convert.ToChar(Console.ReadLine());
-
-                switch (shopMenu)
-                {
-                    case '1':
-                        WeaponShop();
-                        shopLoop = false;
-                        break;
-
-                    case '2':
-                        break;
-
-                    case '3':
-                        break;
-
-                    case '4':
-                        break;
-
-                    case 'w':
-                        shopLoop = false;
-                        break;
-
-                    default:
-                        break;
-                }
-            }
-        }
-
-
-
         public Weapon[] GetWeapons()
         {
             return WepList;
@@ -76,18 +34,11 @@ namespace DungeonRPG
         public void WeaponShop()
         {
             Console.Clear();
-            //int e = 0;
-            //foreach (var s in GetWeapons())
-            //{
-            //    Console.WriteLine(s.Name + " (" + e + ")");
-            //    e++;
-            //}
-            Console.WriteLine(BronzeSword.Name + " (0)");
-            Console.WriteLine(IronSword.Name + " (1)");
-            Console.WriteLine(SteelSword.Name + " (2)");
-            Console.WriteLine(MithrilSword.Name + " (3)");
-            Console.WriteLine(RuneSword.Name + " (4)");
-            Console.WriteLine("Exit (5)");
+            Console.WriteLine("(1) {0} DPS: {1} Price: {2}", IronSword.Name, IronSword.Damage, IronSword.Price);
+            Console.WriteLine("(2) {0} DPS: {1} Price: {2}", SteelSword.Name, SteelSword.Damage, SteelSword.Price);
+            Console.WriteLine("(3) {0} DPS: {1} Price: {2}", MithrilSword.Name, MithrilSword.Damage, MithrilSword.Price);
+            Console.WriteLine("(4) {0} DPS: {1} Price: {2}", RuneSword.Name, RuneSword.Damage, RuneSword.Price);
+            Console.WriteLine("(11) Exit");
         }
     }
 }

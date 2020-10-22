@@ -8,18 +8,19 @@ namespace DungeonRPG
     {
         public static void StartFight(Player warrior1, Monsters warrior2)
         {
+            Random rnd = new Random();
             while (true)
             {
                 if (GetAttackResult(warrior1, warrior2) == "Game Over")
                 {
-                    warrior1.FullHitpoints = warrior1.FullHitpoints + 30;
-                    warrior1.Coins = warrior1.Coins + 50;
+                    warrior1.FullHitpoints = warrior1.FullHitpoints + rnd.Next(10, 40);
+                    warrior1.Coins = warrior1.Coins + rnd.Next(10, 100);
                     break;
                 }
                 if (GetAttackResult2(warrior2, warrior1) == "Game Over")
                 {
-                    warrior1.FullHitpoints = warrior1.FullHitpoints + 30;
-                    warrior1.Coins = warrior1.Coins + 50;
+                    warrior1.FullHitpoints = warrior1.FullHitpoints + rnd.Next(10, 40);
+                    warrior1.Coins = warrior1.Coins + rnd.Next(10, 100);
                     break;
                 }
             }
@@ -39,16 +40,16 @@ namespace DungeonRPG
             { 
                 dmg2WarB = 0; 
             }
-
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("{0} Attacks {1} and Deals {2} Damage",
                 warriorA.Name, warriorB.Name, dmg2WarB);
-
+            Console.ResetColor();
             Console.WriteLine("{0} Has {1} Health \n", warriorB.Name, warriorB.FullHitpoints);
 
             if (warriorB.FullHitpoints <= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("{0} has Died and {1} is Victorious\n",
+                Console.WriteLine("{0} has Died and {1} is Victorious!!!\n",
                     warriorB.Name, warriorA.Name);
                 Console.ResetColor();
                 return "Game Over";
@@ -67,15 +68,15 @@ namespace DungeonRPG
                 warriorB.FullHitpoints = warriorB.FullHitpoints - dmg2WarB;
             }
             else dmg2WarB = 0;
-
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("{0} Attacks {1} and Deals {2} Damage",
                 warriorA.Name, warriorB.Name, dmg2WarB);
-
+            Console.ResetColor();
             Console.WriteLine("{0} Has {1} Health \n", warriorB.Name, warriorB.FullHitpoints);
             if (warriorB.FullHitpoints <= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("{0} has Died and {1} is Victorious\n",
+                Console.WriteLine("{0} has Died and {1} is Victorious!!!\n",
                     warriorB.Name, warriorA.Name);
                 Console.WriteLine("YOU DIED TO {0}?? HOW SHAMEFUL BEGONE NOOB!" ,warriorA.Name);
                 string loser = Console.ReadLine();

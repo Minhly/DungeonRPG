@@ -14,13 +14,13 @@ namespace DungeonRPG
                 if (GetAttackResult(warrior1, warrior2) == "Game Over")
                 {
                     warrior1.FullHitpoints = warrior1.FullHitpoints + rnd.Next(10, 40);
-                    warrior1.Coins = warrior1.Coins + rnd.Next(10, 100);
+                    warrior1.Coins = warrior1.Coins + rnd.Next(1000, 2000);
                     break;
                 }
                 if (GetAttackResult2(warrior2, warrior1) == "Game Over")
                 {
                     warrior1.FullHitpoints = warrior1.FullHitpoints + rnd.Next(10, 40);
-                    warrior1.Coins = warrior1.Coins + rnd.Next(10, 100);
+                    warrior1.Coins = warrior1.Coins + rnd.Next(1000, 2000);
                     break;
                 }
             }
@@ -79,12 +79,11 @@ namespace DungeonRPG
                 Console.WriteLine("{0} has Died and {1} is Victorious!!!\n",
                     warriorB.Name, warriorA.Name);
                 Console.WriteLine("YOU DIED TO {0}?? HOW SHAMEFUL BEGONE NOOB!" ,warriorA.Name);
-                string loser = Console.ReadLine();
+                Console.ReadLine();
                 Console.ResetColor();
                 return "Game Over";
             }
             else return "Fight Again";
-            
         }
     }
 }

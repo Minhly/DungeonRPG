@@ -25,31 +25,22 @@ namespace DungeonRPG
             }
         }
 
-        public void BattleProgressEvent()
+        public void BattleEngage()
         {
-            Console.WriteLine("Enter (w) to progress further");
-            char move = Convert.ToChar(Console.ReadLine());
             Console.Clear();
             PrintStatsGear();
             var loc = Location2.GetLocations()[c];
             var monst = Monsterlist.GetMonsters()[c];
             Console.WriteLine("You have reached {0} of the dungeon, a monstrous shadow stands before you its {1}!!", loc.DungeonName, monst.Name);
             Console.WriteLine("Press (w) to engage in battle or (e) to retreat!");
-            move = Convert.ToChar(Console.ReadLine());
+            char move = Convert.ToChar(Console.ReadLine());
             if (move == 'w')
             {
                 Battle.StartFight(player, monst);
             }
-            else if(move == 'e')
+            else if (move == 'e')
             {
-                monst.MaxHit = monst.MaxHit * 2;
-                monst.FullHitpoints = monst.FullHitpoints * 2;
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("YOU FOOL THERES NO ESCAPE FROM HELL {0} HAS ENRAGED AND DOUBLED ITS STATS", monst.Name);
-                Console.WriteLine("Press (w) to engage in battle quick you fool!!!");
-                Console.ResetColor();
-                char fight = Convert.ToChar(Console.ReadLine());
-                Battle.StartFight(player, monst);
+                RandomRetreatEvent();
             }
             c++;
             if (c == 9)
@@ -60,7 +51,38 @@ namespace DungeonRPG
                 gameCon = false;
             }
             Console.WriteLine("\nEnter (w) to progress further");
-            char progress = Convert.ToChar(Console.ReadLine());
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+        public void BattleProgressEvent()
+        {
+            Console.WriteLine("Enter (w) to progress further");
+            Console.ReadLine();
+            BattleEngage();
+        }
+
+        public void RandomRetreatEvent()
+        {
+            int randomEvent = gambah.Next(1, 5);
+            if(randomEvent == 1)
+            {
+                var monst = Monsterlist.GetMonsters()[c];
+                monst.MaxHit = monst.MaxHit * 2;
+                monst.FullHitpoints = monst.FullHitpoints * 2;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("YOU FOOL THERES NO ESCAPE FROM HELL {0} HAS ENRAGED AND DOUBLED ITS STATS", monst.Name);
+                Console.WriteLine("Press (w) to engage in battle quick you fool!!!");
+                Console.ResetColor();
+                char fight = Convert.ToChar(Console.ReadLine());
+                Battle.StartFight(player, monst);
+            }
+            else if (randomEvent == 2)
+            {
+                Console.WriteLine("While fleeing the battle half your coins fell out of your pocket how unlucky!");
+                player.Coins = player.Coins / 2;
+                Console.ReadLine();
+            }
         }
 
         public void ShopEvent()
@@ -82,22 +104,18 @@ namespace DungeonRPG
                     case '1':
                         shop.WeaponShop();
                         WeaponPurchase();
-                        shopLoop = false;
                         break;
 
                     case '2':
                         BuyHitpointsAndStrenghtShop();
-                        shopLoop = false;
                         break;
 
                     case '3':
                         GambleCoins();
-                        shopLoop = false;
                         break;
 
                     case 'w':
-                        BattleProgressEvent();
-                        shopLoop = false;
+                        BattleEngage();
                         break;
 
                     default:
@@ -236,6 +254,8 @@ namespace DungeonRPG
             Console.WriteLine("\nCongratulations you paid {1} bought {0}!\n", shop.WepList[weaponBuy].Name, shop.WepList[weaponBuy].Price);
             Console.WriteLine("New balance: {0}\n", player.Coins);
             Console.ResetColor();
+            Console.ReadLine();
+            ShopEvent();
             }
         }
 

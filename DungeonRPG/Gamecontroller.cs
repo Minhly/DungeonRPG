@@ -57,15 +57,15 @@ namespace DungeonRPG
 
         public void BattleProgressEvent()
         {
-            Console.WriteLine("Enter (w) to progress further");
+            Console.WriteLine("Enter any (key) to progress further");
             Console.ReadLine();
             BattleEngage();
         }
 
         public void RandomRetreatEvent()
         {
-            int randomEvent = gambah.Next(1, 5);
-            if(randomEvent == 1)
+            int randomEvent = gambah.Next(1, 6);
+            if(randomEvent == 1 || randomEvent == 2)
             {
                 var monst = Monsterlist.GetMonsters()[c];
                 monst.MaxHit = monst.MaxHit * 2;
@@ -77,11 +77,22 @@ namespace DungeonRPG
                 char fight = Convert.ToChar(Console.ReadLine());
                 Battle.StartFight(player, monst);
             }
-            else if (randomEvent == 2)
+            else if (randomEvent == 3)
             {
                 Console.WriteLine("While fleeing the battle half your coins fell out of your pocket how unlucky!");
                 player.Coins = player.Coins / 2;
-                Console.ReadLine();
+            }
+            else if (randomEvent == 4)
+            {
+                Console.WriteLine("You got away safely and found a chest on the way!");
+                Console.WriteLine("You open it and find 100 coins!");
+                player.Coins = player.Coins + 100;
+                Console.WriteLine("You now have {0} coins", player.Coins);
+            }
+            else if (randomEvent == 5)
+            {
+                Console.WriteLine("While retreating you step on a lego and take 30 damage!");
+                player.FullHitpoints = player.FullHitpoints - 30;
             }
         }
 

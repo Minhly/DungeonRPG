@@ -14,13 +14,13 @@ namespace DungeonRPG
                 if (GetAttackResult(warrior1, warrior2) == "Game Over")
                 {
                     warrior1.FullHitpoints = warrior1.FullHitpoints + rnd.Next(10, 40);
-                    warrior1.Coins = warrior1.Coins + rnd.Next(1000, 2000);
+                    warrior1.Coins = warrior1.Coins + rnd.Next(100, 300);
                     break;
                 }
                 if (GetAttackResult2(warrior2, warrior1) == "Game Over")
                 {
                     warrior1.FullHitpoints = warrior1.FullHitpoints + rnd.Next(10, 40);
-                    warrior1.Coins = warrior1.Coins + rnd.Next(1000, 2000);
+                    warrior1.Coins = warrior1.Coins + rnd.Next(100, 300);
                     break;
                 }
             }

@@ -7,15 +7,15 @@ namespace DungeonRPG
     class MonsterList
     {
         private Monsters[] MonList;
-        Monsters Lichking = new Monsters("Lich King", 50, 2);
-        Monsters Sylvanas = new Monsters("Sylvanas", 50, 2);
-        Monsters Arthas = new Monsters("Arthas", 50, 2);
-        Monsters Alexstrasza = new Monsters("Alexstrasza", 50, 2);
-        Monsters Malygos = new Monsters("Malygos", 50, 2);
+        Monsters Lichking = new Monsters("Lich King", 1000, 50);
+        Monsters Sylvanas = new Monsters("Sylvanas", 200, 5);
+        Monsters Arthas = new Monsters("Arthas", 200, 5);
+        Monsters Alexstrasza = new Monsters("Alexstrasza", 200, 5);
+        Monsters Malygos = new Monsters("Malygos", 200, 5);
         Monsters Ysera = new Monsters("Ysera", 200, 10);
-        Monsters Azshara = new Monsters("Azshara", 150, 7);
-        Monsters Illidan = new Monsters("Illidan", 100, 25);
-        Monsters Cenarius = new Monsters("Cenarius", 200, 1);
+        Monsters Azshara = new Monsters("Azshara", 200, 7);
+        Monsters Illidan = new Monsters("Illidan", 200, 25);
+        Monsters Cenarius = new Monsters("Cenarius", 200, 2);
 
         public MonsterList()
         {

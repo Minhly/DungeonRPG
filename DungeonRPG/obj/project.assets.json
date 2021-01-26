@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\minh0040\\.nuget\\packages\\": {},
+    "C:\\Users\\MinhY\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\minh0040\\source\\repos\\DungeonRPG\\DungeonRPG\\DungeonRPG.csproj",
+      "projectUniqueName": "C:\\Users\\MinhY\\source\\repos\\DungeonRPG\\DungeonRPG\\DungeonRPG.csproj",
       "projectName": "DungeonRPG",
-      "projectPath": "C:\\Users\\minh0040\\source\\repos\\DungeonRPG\\DungeonRPG\\DungeonRPG.csproj",
-      "packagesPath": "C:\\Users\\minh0040\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\minh0040\\source\\repos\\DungeonRPG\\DungeonRPG\\obj\\",
+      "projectPath": "C:\\Users\\MinhY\\source\\repos\\DungeonRPG\\DungeonRPG\\DungeonRPG.csproj",
+      "packagesPath": "C:\\Users\\MinhY\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MinhY\\source\\repos\\DungeonRPG\\DungeonRPG\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\minh0040\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MinhY\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -63,7 +63,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

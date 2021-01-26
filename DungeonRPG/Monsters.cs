@@ -13,7 +13,7 @@ namespace DungeonRPG
             MaxHit = maxhit;
         }
 
-        public int Attack()
+        public override int Attack()
         {
             return rnd.Next(1, (int)MaxHit);
         }

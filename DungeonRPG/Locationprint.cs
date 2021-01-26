@@ -7,16 +7,16 @@ namespace DungeonRPG
     public class Locationprint
     {
         private Location[] LocationRND;
-        Location Darnassus = new Location("Level 1", 5);
-        Location Exodar = new Location("Level 2", 5);
-        Location Ogrimmar = new Location("Level 3", 5);
-        Location Stormwind = new Location("Level 4", 5);
-        Location Undercity = new Location("Level 5", 5);
-        Location Dalaran = new Location("Level 6", 5);
-        Location Ironforge = new Location("Level 7", 5);
-        Location Shattrah = new Location("Level 8", 5);
-        Location Boralus = new Location("Level 9", 5);
-        
+        Location Darnassus = new Location("Lair of her majesty the Queen", 5);
+        Location Exodar = new Location("Throne of Stormwind", 5);
+        Location Ogrimmar = new Location("Washington golf course", 5);
+        Location Stormwind = new Location("a dark lair", 5);
+        Location Undercity = new Location("The summoners rift", 5);
+        Location Dalaran = new Location("a dark bedroom", 5);
+        Location Ironforge = new Location("a Cat petting zoo", 5);
+        Location Shattrah = new Location("Oriath", 5);
+        Location Boralus = new Location("The dark side of the Moon", 5);
+
         public Locationprint()
         {
             for (int e = 0; e < 1; e++)
@@ -33,6 +33,8 @@ namespace DungeonRPG
                 this.LocationRND[8] = Boralus;
             }
         }
+
+
 
         public Location[] GetLocations()
         {
